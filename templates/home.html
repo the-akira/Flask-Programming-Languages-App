@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Flask Programming Languages</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <script src="https://kit.fontawesome.com/abb211c046.js"></script>
+  </head>
+  <body>
+      <h1 class="title">Flask Programming Languages App</h1>
+      <p class="description">
+        A <b>programming language</b> is a vocabulary and set of grammatical rules for instructing a computer or computing device to perform specific tasks. The term programming language usually refers to high-level languages, such as BASIC, C, C++, COBOL, Java, FORTRAN, Ada, and Pascal.
+
+        Each programming language has a unique set of keywords (words that it understands) and a special syntax for organizing program instructions.
+      </p>
+      <div class="header">
+        <a href="https://github.com/the-akira" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+        <a href="https://stackoverflow.com/" target="_blank"><i class="fab fa-stack-overflow fa-3x"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+      </div>
+      <hr>
+      <div class="container">
+          <div class="linguagens">
+            {% for language in languages %}
+            <div class="linguagem-container">
+              <p class="linguagem-nome">{{ language[0] }}</p>
+              <a class="link" target="_blank" href="{{ language[1] }}">Read more</a>
+            </div>
+            {% endfor %}
+          </div>
+      </div>
+      {{ pagination.links }}
+  </body>
+</html>
