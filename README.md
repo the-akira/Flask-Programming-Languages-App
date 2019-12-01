@@ -36,4 +36,4 @@ Run the Application
 python app.py
 ```
 
-In order to change the default number of posts per page you have to change the **per_page** variable in { `flask_paginate.__init__.py` file
+In order to change the default number of posts per page you have to change the **per_page** variable in `flask_paginate.__init__.py` file
