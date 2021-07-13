@@ -18,14 +18,9 @@ def get_lang(offset=0, per_page=10):
 def index():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
     total = len(languages)
-    pagination_langs = get_lang(offset=offset, per_page=per_page)
+    pag_langs = get_lang(offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total)
-    return render_template('home.html',
-                           languages=pagination_langs,
-                           page=page,
-                           per_page=per_page,
-                           pagination=pagination,
-                           )
+    return render_template('home.html',languages=pag_langs,page=page,per_page=per_page,pagination=pagination)
 
 if __name__ == '__main__':
     app.run(debug=True)
